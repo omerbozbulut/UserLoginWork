@@ -24,16 +24,28 @@ class ViewController: UIViewController {
     }
 
     @IBAction func LoginPressed(_ sender: UIButton) {
+        let userAlert = UIAlertController(title: "Error!", message: "User not found", preferredStyle: .alert)
+        
+        let passwordAlert = UIAlertController(title: "Error!", message: "Wrong password", preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: "Okey", style: UIAlertAction.Style.default, handler: nil) // handler -> butona basıldığında yapılacak işlem
+        
+        userAlert.addAction(okButton)
+        passwordAlert.addAction(okButton)
+        
+        
         username = usernameTextField.text!
         password = passwordTextField.text!
         
         if let realPassword = userDefault.string(forKey: username){
             if realPassword == password{
                 performSegue(withIdentifier: "goToSecondVC", sender: nil)
+            }else{
+                self.present(passwordAlert, animated: true, completion: nil)
             }
-        }
-        
-    }
+        }else{
+        self.present(userAlert, animated: true, completion: nil)
+        }}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecondVC"{
@@ -42,6 +54,10 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    // doğru kişi doğru şifre video
+    // yanlış kişi video
+    // yanlış şifre video
     
     
     
