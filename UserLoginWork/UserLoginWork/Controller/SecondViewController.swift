@@ -9,11 +9,17 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    var username = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        usernameLabel.text = username
     }
+    
     
 
 

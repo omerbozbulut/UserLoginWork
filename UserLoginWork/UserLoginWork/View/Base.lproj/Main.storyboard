@@ -25,7 +25,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bsQ-f2-7Ed">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="130"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-vm-Dfx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-vm-Dfx">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="tHa-NJ-MP5"/>
@@ -86,7 +86,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="dYt-ua-8Yc" kind="show" id="Lkz-iA-BfO"/>
+                                    <action selector="LoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOm-z9-LxG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,13 +107,14 @@
                     <connections>
                         <outlet property="passwordTextField" destination="8W9-L7-qtm" id="TNW-PN-nA1"/>
                         <outlet property="usernameTextField" destination="jvQ-dz-oCl" id="olc-7i-3P2"/>
+                        <segue destination="dYt-ua-8Yc" kind="show" identifier="goToSecondVC" id="hHI-8t-M1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.84615384615381" y="68.957345971563981"/>
         </scene>
-        <!--Logged in-->
+        <!--Second View Controller-->
         <scene sceneID="Tq7-NI-Axr">
             <objects>
                 <viewController id="dYt-ua-8Yc" customClass="SecondViewController" customModule="UserLoginWork" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,18 +127,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="128" translatesAutoresizingMaskIntoConstraints="NO" id="9nE-AN-wP9">
-                                <rect key="frame" x="139.66666666666666" y="328" width="110.66666666666666" height="188"/>
+                                <rect key="frame" x="133" y="405.33333333333331" width="124" height="33.666666666666686"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-i1-6C4">
-                                        <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7i-JP-bnN">
-                                        <rect key="frame" x="0.0" y="158" width="110.66666666666667" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7i-JP-bnN">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="33.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -150,7 +145,10 @@
                             <constraint firstItem="9nE-AN-wP9" firstAttribute="centerY" secondItem="YZW-fI-dcG" secondAttribute="centerY" id="bzl-U5-IUO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Logged in" id="9Ho-2h-vEZ"/>
+                    <navigationItem key="navigationItem" id="ShL-Ng-s5d"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="q7i-JP-bnN" id="yd7-8y-xwW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKg-Zj-JI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
