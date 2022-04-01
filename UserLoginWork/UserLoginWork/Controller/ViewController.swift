@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
     var username = ""
     var password = ""
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         userDefault.set("1234", forKey: "admin")
         userDefault.set("111", forKey: "customer")
+        loginButton.layer.cornerRadius = CGFloat(10)
     }
 
     @IBAction func LoginPressed(_ sender: UIButton) {
@@ -53,14 +55,6 @@ class ViewController: UIViewController {
             destinationVC.username = username
         }
     }
-    
-    
-    // doğru kişi doğru şifre video
-    // yanlış kişi video
-    // yanlış şifre video
-    
-    
-    
 
 }
 

@@ -105,6 +105,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZsA-jf-NHN"/>
                     <connections>
+                        <outlet property="loginButton" destination="dvh-MF-qu4" id="Ev1-mN-HUS"/>
                         <outlet property="passwordTextField" destination="8W9-L7-qtm" id="TNW-PN-nA1"/>
                         <outlet property="usernameTextField" destination="jvQ-dz-oCl" id="olc-7i-3P2"/>
                         <segue destination="dYt-ua-8Yc" kind="show" identifier="goToSecondVC" id="hHI-8t-M1r"/>
